@@ -15,6 +15,7 @@ def reward_function(params):
         return float(1e-3)
     else:
         return float(1.0)
+        
 2. Waypoints 추적 모델
 설명: Waypoints를 기반으로 차량의 주행 방향 정확도를 보상에 추가했습니다. 차량의 헤딩이 트랙의 진행 방향과 일치할수록 높은 보상을 주어 안정적인 코너링과 주행을 유도합니다.
 
@@ -48,6 +49,7 @@ def reward_function(params):
         reward += 1.0
 
     return float(reward)
+    
 3. 회피 최적화 모델
 설명: 장애물 회피에 가장 집중하는 모델입니다. 가장 가까운 장애물의 위치(왼쪽/오른쪽)를 파악하고, 차량이 장애물의 반대편 차선으로 주행할 경우 큰 보상을 주어 충돌을 피하도록 직접적으로 유도합니다.
 
