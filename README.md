@@ -88,13 +88,6 @@ def reward_function(params):
 
 
 
-
-
-
-
-
-
-
 대회 최고 기록 코드:
 
     import math
