@@ -167,3 +167,82 @@ def reward_function(params):
         reward += speed + time_reward
 
     return float(reward)
+
+
+
+
+
+
+    import math
+import numpy as np
+
+# --- [1단계: 존(Zone) 정의] ---
+ZONE_1_WAYPOINTS = list(range(15, 45))
+ZONE_2_WAYPOINTS = list(range(45, 80))
+ZONE_3_WAYPOINTS = list(range(80, 110)) + list(range(0, 15))
+
+def reward_function(params):
+    # --- 입력 파라미터 ---
+    all_wheels_on_track = params['all_wheels_on_track']
+    is_crashed = params['is_crashed']
+    progress = params['progress']
+    steps = params['steps']
+    speed = params['speed']
+    waypoints = params['waypoints']
+    closest_waypoints = params['closest_waypoints']
+    heading = params['heading']
+    steering_angle = abs(params['steering_angle'])
+    
+    # --- [Level 0] 생존 프로토콜 ---
+    if not all_wheels_on_track or is_crashed:
+        return 1e-4
+
+    # --- [Level 1] 장애물 회피 프로토콜 ---
+    # (장애물 모드에서는 이 부분의 주석을 해제하여 사용)
+    # closest_objects = params['closest_objects']
+    # if len(closest_objects) > 0:
+    #     ... (이전 장애물 회피 로직) ...
+
+    # --- [Level 2] 존(Zone) 기반 주행 시스템 ---
+    reward = (progress / 100) ** 1.5
+    time_reward = (progress / steps) if steps > 0 else 0
+    current_waypoint = closest_waypoints[1]
+
+    if current_waypoint in ZONE_1_WAYPOINTS:
+        # Zone 1: 균형
+        reward += (0.8 * speed) + time_reward
+    
+    elif current_waypoint in ZONE_2_WAYPOINTS:
+        # Zone 2: 가속
+        reward += (1.5 * (speed**3)) + (2.0 * time_reward)
+
+    elif current_waypoint in ZONE_3_WAYPOINTS:
+        # Zone 3: 제어
+        reward += (0.5 * np.log(speed + 1)) + (0.5 * time_reward)
+    
+    else:
+        # 기타 구간: 기본 보상
+        reward += speed + time_reward
+
+    # --- [핵심 수정] 주행 품질 보상 시스템 ---
+    # 3. 부드러운 조향 유도 (페널티 & 보너스)
+    
+    # a. 방향 일치 보상 (Heading Bonus)
+    next_point = waypoints[closest_waypoints[1]]
+    prev_point = waypoints[closest_waypoints[0]]
+    track_direction = math.degrees(math.atan2(next_point[1] - prev_point[1], next_point[0] - prev_point[0]))
+    direction_diff = abs(track_direction - heading)
+    if direction_diff > 180:
+        direction_diff = 360 - direction_diff
+    
+    # 방향 차이가 작을수록 1에 가까운 보너스
+    heading_bonus = (1 - (direction_diff / 180.0))**2
+    
+    # 최종 보상에 주행 품질 요소를 곱해줌
+    reward *= (1 + heading_bonus)
+    
+    # 4. 속도 보너스 (tie-breaker 역할)
+    # 기본적인 속도를 유지하도록 약간의 추가 보너스
+    reward += (speed / 4.0)
+    
+    return float(reward)
