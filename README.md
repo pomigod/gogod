@@ -5,8 +5,6 @@ DeepRacer 보상 함수 (Reward Functions)
 1. 기본 모델 (Baseline Model)
 설명: 가장 기본적인 함수입니다. 트랙을 이탈하거나 장애물과 충돌할 경우 매우 낮은 보상을 주고, 트랙 위를 주행하면 기본 보상을 부여하여 완주 자체에 집중하도록 설계되었습니다.
 
-Python
-
 def reward_function(params):
     all_wheels_on_track = params['all_wheels_on_track']
     is_crashed = params['is_crashed']
@@ -18,8 +16,6 @@ def reward_function(params):
         
 2. Waypoints 추적 모델
 설명: Waypoints를 기반으로 차량의 주행 방향 정확도를 보상에 추가했습니다. 차량의 헤딩이 트랙의 진행 방향과 일치할수록 높은 보상을 주어 안정적인 코너링과 주행을 유도합니다.
-
-Python
 
 import math
 
@@ -53,8 +49,6 @@ def reward_function(params):
 3. 회피 최적화 모델
 설명: 장애물 회피에 가장 집중하는 모델입니다. 가장 가까운 장애물의 위치(왼쪽/오른쪽)를 파악하고, 차량이 장애물의 반대편 차선으로 주행할 경우 큰 보상을 주어 충돌을 피하도록 직접적으로 유도합니다.
 
-Python
-
 def reward_function(params):
     objects_left_of_center = params['objects_left_of_center']
     closest_objects = params['closest_objects']
@@ -76,12 +70,6 @@ def reward_function(params):
             reward = 1e-3 # 충돌 경로에 있을 경우 낮은 보상
 
     return float(reward)
-
-
-
-
-
-
 
 
 
