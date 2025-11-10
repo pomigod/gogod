@@ -16,21 +16,21 @@
 
 **당신의 답안** (방금 작성한 것):
 ```
-C:\Users\LENOVO\Downloads\AI_TOP_100\모델 답안\문제1_답안.txt
-C:\Users\LENOVO\Downloads\AI_TOP_100\모델 답안\문제2_답안.txt
-C:\Users\LENOVO\Downloads\AI_TOP_100\모델 답안\문제3_답안.txt
-C:\Users\LENOVO\Downloads\AI_TOP_100\모델 답안\문제4_답안.txt
-C:\Users\LENOVO\Downloads\AI_TOP_100\모델 답안\문제5_답안.txt
+/home/user/gogod/AI_TOP_100/모델_답안/문제1_답안.txt
+/home/user/gogod/AI_TOP_100/모델_답안/문제2_답안.txt
+/home/user/gogod/AI_TOP_100/모델_답안/문제3_답안.txt
+/home/user/gogod/AI_TOP_100/모델_답안/문제4_답안.txt
+/home/user/gogod/AI_TOP_100/모델_답안/문제5_답안.txt
 ```
 
-**Gemini CLI 답안** (제공될 예정):
+**Gemini CLI 답안** (비교 대상):
 ```
-C:\Users\LENOVO\Downloads\AI_TOP_100\Gemini CLI 답 예측\[파일명들]
+/home/user/gogod/AI_TOP_100/Gemini CLI 답 예측/
 ```
 
 ## 📝 비교 분석 작성 형식
 
-**저장 경로**: `C:\Users\LENOVO\Downloads\AI_TOP_100\모델 답안\비교분석_최종보고서.txt`
+**저장 경로**: `/home/user/gogod/AI_TOP_100/모델_답안/비교분석_최종보고서.txt`
 
 ```
 ================================================================================

@@ -11,29 +11,29 @@
 
 ## 📁 작업 경로
 
-**베이스 경로**: `C:\Users\LENOVO\Downloads\AI_TOP_100`
+**베이스 경로**: `/home/user/gogod/AI_TOP_100`
 
-**답안 저장 경로**: `C:\Users\LENOVO\Downloads\AI_TOP_100\모델 답안\`
+**답안 저장 경로**: `/home/user/gogod/AI_TOP_100/모델_답안/`
 
 ## 📋 문제 파일 위치
 
-- **문제 설명**: `C:\Users\LENOVO\Downloads\AI_TOP_100\AI_TOP_100 문제.txt`
-- **문제 1 이미지**: `C:\Users\LENOVO\Downloads\AI_TOP_100\ai_top_100_menu_images_1번\`
-- **문제 2 이미지**: `C:\Users\LENOVO\Downloads\AI_TOP_100\ai_top_100_ocr 2번\`
-- **문제 3 영상**: `C:\Users\LENOVO\Downloads\AI_TOP_100\ai_top_100_vide 3번\`
-- **문제 4 데이터**: `C:\Users\LENOVO\Downloads\AI_TOP_100\ai_top_100_modeling 4번\`
-- **문제 5 PDF**: `C:\Users\LENOVO\Downloads\AI_TOP_100\ai_top_100_textfinder 5번\`
+- **문제 설명**: `/home/user/gogod/AI_TOP_100/AI_TOP_100 문제.txt`
+- **문제 1 이미지**: `/home/user/gogod/AI_TOP_100/ai_top_100_menu_images_1번/`
+- **문제 2 이미지**: `/home/user/gogod/AI_TOP_100/ai_top_100_ocr 2번/`
+- **문제 3 영상**: `/home/user/gogod/AI_TOP_100/ai_top_100_vide 3번/`
+- **문제 4 데이터**: `/home/user/gogod/AI_TOP_100/ai_top_100_modeling 4번/`
+- **문제 5 PDF**: `/home/user/gogod/AI_TOP_100/ai_top_100_textfinder 5번/`
 
 ## 📝 답안 작성 규칙
 
 ### 답안 파일명 규칙
 ```
-C:\Users\LENOVO\Downloads\AI_TOP_100\모델 답안\문제1_답안.txt
-C:\Users\LENOVO\Downloads\AI_TOP_100\모델 답안\문제2_답안.txt
-C:\Users\LENOVO\Downloads\AI_TOP_100\모델 답안\문제3_답안.txt
-C:\Users\LENOVO\Downloads\AI_TOP_100\모델 답안\문제4_답안.txt
-C:\Users\LENOVO\Downloads\AI_TOP_100\모델 답안\문제5_답안.txt
-C:\Users\LENOVO\Downloads\AI_TOP_100\모델 답안\풀이과정_상세분석.txt
+/home/user/gogod/AI_TOP_100/모델_답안/문제1_답안.txt
+/home/user/gogod/AI_TOP_100/모델_답안/문제2_답안.txt
+/home/user/gogod/AI_TOP_100/모델_답안/문제3_답안.txt
+/home/user/gogod/AI_TOP_100/모델_답안/문제4_답안.txt
+/home/user/gogod/AI_TOP_100/모델_답안/문제5_답안.txt
+/home/user/gogod/AI_TOP_100/모델_답안/풀이과정_상세분석.txt
 ```
 
 ### 답안 작성 형식
@@ -148,7 +148,7 @@ C:\Users\LENOVO\Downloads\AI_TOP_100\모델 답안\풀이과정_상세분석.txt
 - [ ] 문제 5: 4개 PDF의 숨겨진 텍스트 추출
 
 풀이 완료 후:
-- [ ] 모든 답안 파일이 `모델 답안/` 폴더에 저장되었는지 확인
+- [ ] 모든 답안 파일이 `모델_답안/` 폴더에 저장되었는지 확인
 - [ ] 각 답변에 근거와 분석 과정이 명시되었는지 확인
 - [ ] 풀이과정_상세분석.txt 작성 완료
 - [ ] 답안 제출 준비 완료
