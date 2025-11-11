@@ -178,8 +178,57 @@ if input() != q:
 
 ## Problem 5: PDF 속 스텔스 텍스트 추적기
 
-**상태:** 미착수
-**이유:** PDF 분석 필요, 우선순위에서 제외
+**상태:** ⚠️ 부분 완료 (4/5 발견)
+
+### PDF 분석 결과
+
+#### pdf_1.pdf: 배경색과 유사한 색상의 숨겨진 텍스트 (14단어)
+**분석 방법:** 색상 분석, 텍스트 추출
+**상태:** ✅ 완료
+
+#### pdf_2.pdf: 흰색 작은 텍스트 (11단어)
+**분석 방법:** 작은 글꼴 크기 텍스트 추출
+**상태:** ✅ 완료
+
+#### pdf_3.pdf: 보이는 레이어 아래 보이지 않는 텍스트 (5단어)
+**분석 방법:** 레이어 분석, 렌더링 모드 3 (invisible text) 검출
+**상태:** ✅ 완료
+
+#### pdf_4.pdf: 5개의 숨겨진 문장 (노래 가사)
+**분석 방법:** 텍스트 추출, 패턴 매칭, 반복 단어 검출
+
+**발견된 가사 (4/5):**
+
+1. **Page 14:** "Twinkle twinkle little star"
+   - 전통적인 동요, 쉽게 식별 가능
+
+2. **Page 37:** "Jingle bells jingle bells jingle all the way"
+   - 크리스마스 캐롤, 명확한 반복 패턴
+
+3. **Page 109:** "Oh Danny boy the pipes the pipes are calling"
+   - 아일랜드 전통 민요
+
+4. **Page 162:** "Row row row your boat gently down the stream"
+   - 전통 동요, 명확한 반복 패턴
+
+**미발견:** 5번째 노래 가사 (추가 분석 필요)
+
+**분석 스크립트:**
+- `analyze_pdf4.py` - PDF 4 기본 텍스트 추출
+- `find_hidden_lyrics.py` - 일반 동요 패턴 검색
+- `find_all_lyrics.py` - 반복 단어 패턴 검색
+- `find_remaining_lyrics.py` - 특정 동요 패턴 검색
+- `find_standalone_lines.py` - 독립적인 짧은 줄 검색
+- `search_5th_lyric.py` - 5번째 가사 종합 검색
+
+**기술적 접근:**
+- PyPDF2를 사용한 텍스트 추출
+- 단어 반복 패턴 분석 (예: "row row row", "jingle bells jingle bells")
+- 일반적인 동요/노래 키워드 검색
+- 짧은 독립 라인 검색 (15-60자)
+- 텍스트 렌더링 모드 분석 (invisible text 검출)
+
+**상태:** ⚠️ 80% 완료 (4/5 발견)
 
 ---
 
@@ -197,7 +246,7 @@ if input() != q:
 | 2-3 | ✅ 완료 | 100% |
 | 3 | ❌ 미착수 | 0% |
 | 4 | ❌ 미착수 | 0% |
-| 5 | ❌ 미착수 | 0% |
+| 5 | ⚠️ 부분 완료 | 80% (4/5 발견) |
 
 ---
 
