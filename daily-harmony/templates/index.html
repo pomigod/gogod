@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Harmony - 수강신청 도우미</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin-top: 30px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .main-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .chat-container {
+            height: 500px;
+            overflow-y: auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message.assistant {
+            justify-content: flex-start;
+        }
+
+        .message-bubble {
+            max-width: 70%;
+            padding: 12px 18px;
+            border-radius: 18px;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+
+        .message.user .message-bubble {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .message.assistant .message-bubble {
+            background: #e9ecef;
+            color: #333;
+        }
+
+        .input-area {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .input-group {
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        .form-control {
+            border: none;
+            padding: 15px 20px;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+        }
+
+        .btn-send {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            padding: 15px 30px;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-send:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-clear {
+            background: #6c757d;
+            border: none;
+            color: white;
+            margin-left: 10px;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        .btn-clear:hover {
+            background: #5a6268;
+        }
+
+        .feature-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 5px;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 10px;
+            color: #6c757d;
+        }
+
+        .timetable-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .day-column {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            min-height: 200px;
+        }
+
+        .day-header {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .course-item {
+            background: white;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            font-size: 0.9rem;
+        }
+
+        .course-name {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .course-time {
+            color: #6c757d;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Daily Harmony</h1>
+            <p>수강신청 도우미 with AI</p>
+            <div>
+                <span class="feature-badge">대화 기억 기능</span>
+                <span class="feature-badge">시간표 자동 생성</span>
+                <span class="feature-badge">충돌 감지</span>
+            </div>
+        </div>
+
+        <div class="main-card">
+            <div class="chat-container" id="chatContainer">
+                <div class="message assistant">
+                    <div class="message-bubble">
+                        안녕하세요! 수강신청 도우미입니다. 😊<br><br>
+                        수강 과목을 다음 형식으로 입력해주세요:<br>
+                        예) 컴퓨터과학개론 월수 10:00-11:30<br>
+                        예) 자료구조 화목 13:00-14:30<br><br>
+                        여러 과목을 한 번에 입력하시면 시간표를 만들어드립니다!
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <div class="d-flex align-items-center">
+                    <div class="input-group flex-grow-1">
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="userInput"
+                            placeholder="메시지를 입력하세요..."
+                            onkeypress="handleKeyPress(event)"
+                        >
+                        <button class="btn btn-send" onclick="sendMessage()">
+                            전송
+                        </button>
+                    </div>
+                    <button class="btn btn-clear" onclick="clearHistory()">
+                        대화 초기화
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isLoading = false;
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        }
+
+        async function sendMessage() {
+            if (isLoading) return;
+
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            // 사용자 메시지 표시
+            addMessage('user', message);
+            input.value = '';
+
+            // 로딩 표시
+            isLoading = true;
+            const loadingDiv = addLoading();
+
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: message })
+                });
+
+                const data = await response.json();
+
+                // 로딩 제거
+                loadingDiv.remove();
+
+                if (data.error) {
+                    addMessage('assistant', '오류: ' + data.error);
+                } else {
+                    addMessage('assistant', data.response);
+                }
+
+            } catch (error) {
+                loadingDiv.remove();
+                addMessage('assistant', '서버와 통신 중 오류가 발생했습니다: ' + error.message);
+            } finally {
+                isLoading = false;
+            }
+        }
+
+        function addMessage(role, content) {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${role}`;
+
+            const bubbleDiv = document.createElement('div');
+            bubbleDiv.className = 'message-bubble';
+            bubbleDiv.textContent = content;
+
+            messageDiv.appendChild(bubbleDiv);
+            chatContainer.appendChild(messageDiv);
+
+            // 스크롤을 아래로
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        function addLoading() {
+            const chatContainer = document.getElementById('chatContainer');
+            const loadingDiv = document.createElement('div');
+            loadingDiv.className = 'loading';
+            loadingDiv.innerHTML = '<em>응답을 생성하는 중...</em>';
+            chatContainer.appendChild(loadingDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+            return loadingDiv;
+        }
+
+        async function clearHistory() {
+            if (!confirm('대화 기록을 모두 삭제하시겠습니까?')) {
+                return;
+            }
+
+            try {
+                const response = await fetch('/clear_history', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+
+                const data = await response.json();
+
+                // 채팅 컨테이너 초기화
+                const chatContainer = document.getElementById('chatContainer');
+                chatContainer.innerHTML = `
+                    <div class="message assistant">
+                        <div class="message-bubble">
+                            대화 기록이 초기화되었습니다. 새로 시작해주세요!
+                        </div>
+                    </div>
+                `;
+
+                alert(data.message);
+
+            } catch (error) {
+                alert('대화 기록 초기화 중 오류가 발생했습니다: ' + error.message);
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

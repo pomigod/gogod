@@ -1,0 +1,16 @@
+[Unit]
+Description=Daily Harmony - AI Course Registration Assistant
+After=network.target
+
+[Service]
+Type=simple
+User=ec2-user
+WorkingDirectory=/home/ec2-user/daily-harmony
+Environment="PATH=/home/ec2-user/.local/bin:/usr/local/bin:/usr/bin"
+Environment="FLASK_APP=app.py"
+ExecStart=/usr/bin/python3 app.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
