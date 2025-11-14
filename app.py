@@ -31,6 +31,25 @@ def get_bedrock_client():
 
 def ask_ai(question):
     """AI에게 질문하고 답변 받기"""
+
+    # 로컬 테스트 모드 확인
+    if os.environ.get('LOCAL_TEST_MODE') == 'true':
+        return f"""[로컬 테스트 모드]
+
+질문: {question}
+
+안녕하세요! 현재 로컬 환경에서 실행 중이라 실제 AI 답변은 제공되지 않습니다.
+
+✅ 웹 인터페이스는 정상 작동합니다!
+❌ AI 기능은 AWS EC2 배포 후 사용 가능합니다.
+
+AWS EC2에 배포하시면:
+- 실제 Claude AI가 질문에 답변합니다
+- 학습에 필요한 모든 내용을 물어볼 수 있습니다
+- 24시간 언제든 사용 가능합니다
+
+배포 가이드: STEP_BY_STEP_GUIDE.md 파일을 참조하세요!"""
+
     try:
         bedrock = get_bedrock_client()
         if not bedrock:
