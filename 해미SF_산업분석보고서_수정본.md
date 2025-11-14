@@ -18,10 +18,19 @@
 
 출처:
 해양수산부, "기후변화 대응 및 민생 안정을 위한 2026년산 김 생산량 관리 추진", 2025.07.02
+https://www.mof.go.kr/doc/ko/selectDoc.do?docSeq=62170
+
 경향신문, "잘나가는 '검은 반도체' 국산김, 환경 규제 장벽에 생산량 '빨간불'", 2025.10.15
+https://www.khan.co.kr/article/202510152012025
+
 투데이충남, "충남 서천, 살아 숨 쉬는 생명의 땅을 가다", 2025.10.23
+https://www.todaychungnam.net/news/articleView.html?idxno=445867
+
 중부시사신문, "서천군 때 이른 황백화에 서천 김 양식 비상", 2025.11.11
+https://www.gninews.co.kr/news/article.html?no=737285
+
 충남일보, "충남 서천 김 양식장 95%인 3156㏊ 황백화 피해", 2025.11.14
+https://www.kpinews.kr/newsView/1065578196115902
 
 
 2) 산업 동향 및 구조
@@ -34,11 +43,22 @@
 
 출처:
 해양수산부, "2024년산 김 생산량은 전년대비 6% 증가한 약 1.5억 속 달성", 2024.06.10
+https://www.mof.go.kr/doc/ko/selectDoc.do?docSeq=57221
+
 한국수산경제, "2025년산 김 생산량, 관측 이래 최대 기록", 2025.06.15
+http://www.fisheco.com/news/articleView.html?idxno=90307
+
 해양수산부, "기후변화 대응 및 민생 안정을 위한 2026년산 김 생산량 관리 추진", 2025.07.02
+https://www.mof.go.kr/doc/ko/selectDoc.do?docSeq=62170
+
 경향신문, "잘나가는 '검은 반도체' 국산김, 환경 규제 장벽에 생산량 '빨간불'", 2025.10.15
+https://www.khan.co.kr/article/202510152012025
+
 충남일보, "충남 서천 김 양식장 95%인 3156㏊ 황백화 피해", 2025.11.14
+https://www.kpinews.kr/newsView/1065578196115902
+
 굿모닝충청, "서천군, 김 황백화 대응 위해 6억 긴급 투입", 2025.11.14
+https://www.goodmorningcc.com/news/articleView.html?idxno=434437
 
 
 3) 주요 이슈 및 기회요인
@@ -53,9 +73,16 @@
 
 출처:
 해양수산부, "2024년산 김 생산량은 전년대비 6% 증가한 약 1.5억 속 달성", 2024.06.10
+https://www.mof.go.kr/doc/ko/selectDoc.do?docSeq=57221
+
 한국수산경제, "2025년산 김 생산량, 관측 이래 최대 기록", 2025.06.15
+http://www.fisheco.com/news/articleView.html?idxno=90307
+
 해양수산부, "기후변화 대응 및 민생 안정을 위한 2026년산 김 생산량 관리 추진", 2025.07.02
+https://www.mof.go.kr/doc/ko/selectDoc.do?docSeq=62170
+
 서울경제, "연간 김 생산량, 올해 첫 200억 장 넘긴다…'금값'된 김값 전망은", 2025.06
+https://www.sedaily.com/NewsView/2GSPVYLLVT
 
 
 슬라이드 3: 선택 기업 분석 (해미 S&F)
@@ -67,8 +94,12 @@
 사업자등록번호는 313-81-21517이며, 통신판매업신고번호는 2011-충남서천-0025호입니다. "바다의 모든 것을 마음으로 담았습니다"라는 슬로건 아래 서천김 전통식품 인증을 받았으며, 해바라기유를 사용하여 맛있게 구운 조미김을 주력 제품으로 생산하고 있습니다. 서천의 김은 한국 전체 김 생산량의 약 13%를 차지하며, 서천 갯벌의 풍부한 미네랄과 최적의 온도 조건을 활용하여 최상의 맛을 구현합니다.
 
 출처:
-해미S&F영어조합법인 공식 홈페이지 (halldam.cafe24.com, m.halldam.com)
-서천군 온라인직거래몰 (www.seocheondmall.co.kr)
+해미S&F영어조합법인 공식 홈페이지
+https://halldam.cafe24.com
+https://m.halldam.com
+
+서천군 온라인직거래몰
+https://www.seocheondmall.co.kr
 
 
 2) 기업 SWOT 분석
@@ -91,9 +122,16 @@
 
 출처:
 해미S&F영어조합법인 공식 홈페이지
+https://halldam.cafe24.com
+
 해양수산부, "2024년산 김 생산량은 전년대비 6% 증가한 약 1.5억 속 달성", 2024.06.10
+https://www.mof.go.kr/doc/ko/selectDoc.do?docSeq=57221
+
 충남일보, "충남 서천 김 양식장 95%인 3156㏊ 황백화 피해", 2025.11.14
+https://www.kpinews.kr/newsView/1065578196115902
+
 투데이충남, "충남 서천, 살아 숨 쉬는 생명의 땅을 가다", 2025.10.23
+https://www.todaychungnam.net/news/articleView.html?idxno=445867
 
 
 3) 산업과의 연계성
@@ -108,8 +146,13 @@
 
 출처:
 해미S&F영어조합법인 공식 홈페이지
+https://halldam.cafe24.com
+
 서천군 온라인직거래몰
+https://www.seocheondmall.co.kr
+
 투데이충남, "충남 서천, 살아 숨 쉬는 생명의 땅을 가다", 2025.10.23
+https://www.todaychungnam.net/news/articleView.html?idxno=445867
 
 
 슬라이드 4: 성장 분석 (해미 S&F)
@@ -138,7 +181,10 @@
 
 출처:
 해양수산부, "2024년산 김 생산량은 전년대비 6% 증가한 약 1.5억 속 달성", 2024.06.10
+https://www.mof.go.kr/doc/ko/selectDoc.do?docSeq=57221
+
 해양수산부, "기후변화 대응 및 민생 안정을 위한 2026년산 김 생산량 관리 추진", 2025.07.02
+https://www.mof.go.kr/doc/ko/selectDoc.do?docSeq=62170
 
 
 2) 지역산업과의 협력 전략
@@ -157,8 +203,13 @@
 
 출처:
 해미S&F영어조합법인 공식 홈페이지
+https://halldam.cafe24.com
+
 투데이충남, "충남 서천, 살아 숨 쉬는 생명의 땅을 가다", 2025.10.23
+https://www.todaychungnam.net/news/articleView.html?idxno=445867
+
 해양수산부, "기후변화 대응 및 민생 안정을 위한 2026년산 김 생산량 관리 추진", 2025.07.02
+https://www.mof.go.kr/doc/ko/selectDoc.do?docSeq=62170
 
 
 3) 개인 인사이트 및 결론
@@ -187,8 +238,13 @@ MZ세대 타겟 마케팅(SNS, 라이브 커머스, 인플루언서 협업), 온
 
 출처:
 해미S&F영어조합법인 공식 홈페이지
+https://halldam.cafe24.com
+
 해양수산부, "2024년산 김 생산량은 전년대비 6% 증가한 약 1.5억 속 달성", 2024.06.10
+https://www.mof.go.kr/doc/ko/selectDoc.do?docSeq=57221
+
 한국수산경제, "2025년산 김 생산량, 관측 이래 최대 기록", 2025.06.15
+http://www.fisheco.com/news/articleView.html?idxno=90307
 
 
 경쟁사 분석 (추가 정보)
@@ -222,9 +278,16 @@ CJ제일제당 판매 네트워크 활용
 
 출처:
 동원그룹 미디어센터, "동원그룹, 영업이익 8.4% 증가 '내실경영 통했다'", 2025.02.11
+https://media.dongwon.com/post/2054
+
 이넷뉴스, "[2024 연간실적] 동원그룹, 매출 8조9464억·영업익 5039억", 2025.02.11
+https://www.inthenews.co.kr/news/article.html?no=69280
+
 이로운넷, "동원F&B, 2024년 매출액 4조 4836억 원…전년 대비 2.8% ↑", 2025.02.11
+https://www.eroun.net/news/articleView.html?idxno=52684
+
 CEOSCOREDAILY, "동원F&B, '양반김' 인기에 미국 매출 증가세", 2024.05.16
+https://ceoscoredaily.com/page/view/2024051412250564173
 
 
 전체 출처 목록
@@ -232,48 +295,69 @@ CEOSCOREDAILY, "동원F&B, '양반김' 인기에 미국 매출 증가세", 2024.
 정부 및 공공기관
 
 1. 해양수산부, "2024년산 김 생산량은 전년대비 6% 증가한 약 1.5억 속 달성", 보도자료, 2024.06.10
+https://www.mof.go.kr/doc/ko/selectDoc.do?docSeq=57221
 
 2. 해양수산부, "기후변화 대응 및 민생 안정을 위한 2026년산 김 생산량 관리 추진", 보도자료, 2025.07.02
+https://www.mof.go.kr/doc/ko/selectDoc.do?docSeq=62170
 
 3. 한국해양수산개발원(KMI) 수산업관측센터
+https://www.kmi.re.kr/foc
 
 4. 통계청, "2024년 어업생산동향조사 결과(잠정)", 2025.02.21
+https://kostat.go.kr/board.es?mid=a10301010000&bid=225&act=view&list_no=435155
 
 언론 보도
 
 5. 한국수산경제, "2025년산 김 생산량, 관측 이래 최대 기록", 2025.06.15
+http://www.fisheco.com/news/articleView.html?idxno=90307
 
 6. 중부시사신문, "서천군 때 이른 황백화에 서천 김 양식 비상", 2025.11.11
+https://www.gninews.co.kr/news/article.html?no=737285
 
 7. 데일리연합(SNSJTV), "서천군 때 이른 황백화에 서천 김 양식 비상", 2025.11.11
+https://www.dailyan.com/news/article.html?no=754787
 
 8. 투데이충남, "충남 서천, 살아 숨 쉬는 생명의 땅을 가다", 2025.10.23
+https://www.todaychungnam.net/news/articleView.html?idxno=445867
 
 9. 충남일보, "충남 서천 김 양식장 95%인 3156㏊ 황백화 피해", 2025.11.14
+https://www.kpinews.kr/newsView/1065578196115902
 
 10. 굿모닝충청, "서천군, 김 황백화 대응 위해 6억 긴급 투입", 2025.11.14
+https://www.goodmorningcc.com/news/articleView.html?idxno=434437
 
 11. 경향신문, "잘나가는 '검은 반도체' 국산김, 환경 규제 장벽에 생산량 '빨간불'", 2025.10.15
+https://www.khan.co.kr/article/202510152012025
 
 12. 서울경제, "연간 김 생산량, 올해 첫 200억 장 넘긴다…'금값'된 김값 전망은", 2025.06
+https://www.sedaily.com/NewsView/2GSPVYLLVT
 
 13. 서울경제, "금값처럼 폭등한 김값… '검은 반도체' 김 생산 첫 1조 돌파", 2025.02.22
+https://www.seoul.co.kr/news/economy/2025/02/22/20250222500010
 
 14. CEOSCOREDAILY, "동원F&B, '양반김' 인기에 미국 매출 증가세", 2024.05.16
+https://ceoscoredaily.com/page/view/2024051412250564173
 
 15. 동원그룹 미디어센터, "동원그룹, 영업이익 8.4% 증가 '내실경영 통했다'", 2025.02.11
+https://media.dongwon.com/post/2054
 
 16. 이넷뉴스, "[2024 연간실적] 동원그룹, 매출 8조9464억·영업익 5039억", 2025.02.11
+https://www.inthenews.co.kr/news/article.html?no=69280
 
 17. 이로운넷, "동원F&B, 2024년 매출액 4조 4836억 원…전년 대비 2.8% ↑", 2025.02.11
+https://www.eroun.net/news/articleView.html?idxno=52684
 
 18. 어민신문, "2024년산 김생산량 1억4,970만속", 2024
+https://eomin.co.kr/etnews/?cid=21020100&fn=v&no=63498
 
 기업 정보
 
-19. 해미S&F영어조합법인 공식 홈페이지 (halldam.cafe24.com, m.halldam.com)
+19. 해미S&F영어조합법인 공식 홈페이지
+https://halldam.cafe24.com
+https://m.halldam.com
 
-20. 서천군 온라인직거래몰 (www.seocheondmall.co.kr)
+20. 서천군 온라인직거래몰
+https://www.seocheondmall.co.kr
 
 
 주요 검증 내용 요약
