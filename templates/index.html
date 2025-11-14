@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 학습 도우미 - 건양대 6팀</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .team-info {
+            text-align: center;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .chat-container {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            min-height: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 12px 18px;
+            border-radius: 12px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+
+        .user-message {
+            background: #667eea;
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .ai-message {
+            background: white;
+            color: #333;
+            border: 2px solid #e0e0e0;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        #questionInput {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        #questionInput:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        #askButton {
+            padding: 15px 30px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #askButton:hover {
+            background: #5568d3;
+        }
+
+        #askButton:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            text-align: center;
+            color: #667eea;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .examples {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .examples h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .examples ul {
+            list-style-position: inside;
+            color: #856404;
+        }
+
+        .examples li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 AI 학습 도우미</h1>
+        <p class="subtitle">AWS Bedrock Claude를 활용한 학교 학습 지원 서비스</p>
+
+        <div class="team-info">
+            <strong>건양대학교 AI 부트캠프 6팀</strong><br>
+            프로젝트 기간: 2024.11.02 ~ 2024.11.30
+        </div>
+
+        <div class="chat-container" id="chatContainer">
+            <div class="message ai-message">
+                안녕하세요! 저는 AI 학습 도우미입니다. 😊<br>
+                학교 공부나 학습에 관련된 질문을 해주세요!
+            </div>
+        </div>
+
+        <div class="input-container">
+            <input
+                type="text"
+                id="questionInput"
+                placeholder="질문을 입력하세요... (예: 파이썬에서 리스트와 튜플의 차이점은?)"
+                onkeypress="handleKeyPress(event)"
+            >
+            <button id="askButton" onclick="askQuestion()">질문하기</button>
+        </div>
+
+        <div id="loadingMessage" class="loading" style="display: none;">
+            AI가 답변을 생성하고 있습니다...
+        </div>
+
+        <div class="examples">
+            <h3>💡 질문 예시:</h3>
+            <ul>
+                <li>파이썬에서 리스트와 튜플의 차이점은?</li>
+                <li>2차 방정식을 푸는 방법을 설명해줘</li>
+                <li>영어 문법에서 현재완료와 과거형의 차이는?</li>
+                <li>광합성 과정을 간단히 설명해줘</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const chatContainer = document.getElementById('chatContainer');
+        const questionInput = document.getElementById('questionInput');
+        const askButton = document.getElementById('askButton');
+        const loadingMessage = document.getElementById('loadingMessage');
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                askQuestion();
+            }
+        }
+
+        async function askQuestion() {
+            const question = questionInput.value.trim();
+
+            if (!question) {
+                alert('질문을 입력해주세요!');
+                return;
+            }
+
+            // 사용자 메시지 추가
+            addMessage(question, 'user');
+
+            // 입력 필드 초기화 및 버튼 비활성화
+            questionInput.value = '';
+            askButton.disabled = true;
+            loadingMessage.style.display = 'block';
+
+            try {
+                const response = await fetch('/api/ask', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ question: question })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    addMessage(data.answer, 'ai');
+                } else {
+                    addMessage('오류: ' + (data.error || '알 수 없는 오류'), 'ai');
+                }
+            } catch (error) {
+                addMessage('서버 연결 오류: ' + error.message, 'ai');
+            } finally {
+                askButton.disabled = false;
+                loadingMessage.style.display = 'none';
+            }
+        }
+
+        function addMessage(text, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}-message`;
+            messageDiv.textContent = text;
+            chatContainer.appendChild(messageDiv);
+
+            // 스크롤을 최신 메시지로 이동
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+    </script>
+</body>
+</html>
