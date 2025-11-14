@@ -15,10 +15,14 @@ app = Flask(__name__)
 def get_bedrock_client():
     """AWS Bedrock 클라이언트 생성"""
     try:
+        # 리전 설정 (환경 변수로 변경 가능)
+        # Bedrock 사용 가능 리전: us-east-1(버지니아 북부), us-east-2(오하이오), us-west-2(오레곤)
+        region = os.environ.get('AWS_REGION', 'us-east-2')  # 기본값: 오하이오
+
         # EC2에서 IAM Role을 통해 자동으로 인증됩니다
         bedrock = boto3.client(
             service_name='bedrock-runtime',
-            region_name='us-east-1'  # 버지니아 북부
+            region_name=region
         )
         return bedrock
     except Exception as e:

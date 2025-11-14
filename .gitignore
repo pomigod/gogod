@@ -33,3 +33,9 @@ Thumbs.db
 .aws/
 credentials
 config
+awscliv2.zip
+aws/
+
+# Temporary files
+*.tmp
+*.bak
