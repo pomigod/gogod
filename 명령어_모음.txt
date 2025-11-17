@@ -1,0 +1,44 @@
+================================================
+AI_TOP_100 문제 2 답안 - 다운로드 & 보기 명령어
+================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📌 CMD (명령 프롬프트) - 한 줄 명령어
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+curl -o CLAUDE_CODE_ANSWERS.txt https://raw.githubusercontent.com/pomigod/gogod/claude/solve-ancient-ruin-code-018xNrrjXbpRkkuksVVj6tEz/CLAUDE_CODE_ANSWERS.txt && notepad CLAUDE_CODE_ANSWERS.txt
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📌 PowerShell - 한 줄 명령어
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/pomigod/gogod/claude/solve-ancient-ruin-code-018xNrrjXbpRkkuksVVj6tEz/CLAUDE_CODE_ANSWERS.txt" -OutFile "CLAUDE_CODE_ANSWERS.txt"; notepad CLAUDE_CODE_ANSWERS.txt
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📌 PowerShell - 짧은 버전
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+iwr -Uri "https://raw.githubusercontent.com/pomigod/gogod/claude/solve-ancient-ruin-code-018xNrrjXbpRkkuksVVj6tEz/CLAUDE_CODE_ANSWERS.txt" -OutFile "CLAUDE_CODE_ANSWERS.txt"; notepad CLAUDE_CODE_ANSWERS.txt
+
+
+================================================
+💡 사용 방법
+================================================
+
+1. 위 명령어 중 하나를 복사
+2. CMD 또는 PowerShell 열기
+3. 붙여넣기 후 Enter
+4. 자동으로 다운로드되고 메모장이 열림!
+
+
+================================================
+📋 답안 요약
+================================================
+
+문제 2: 고대 유적의 비밀 - 이상한 코드 석판
+
+2-1. 언어 식별: Python
+2-2. 입력 "1q2w3e4r" 출력: WRONG
+2-3. 입력 "HALT" 출력: AITQP100
