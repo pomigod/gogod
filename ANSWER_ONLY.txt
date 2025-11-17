@@ -1,0 +1,83 @@
+================================================================================
+AI_TOP_100 문제 4: 전투 시뮬레이션의 힘 - 최종 답안
+================================================================================
+
+[문제 4-1] 1v1 최강자는?
+선택지:
+  - eyanoo
+  - dgreg
+  - aleo
+  - bras
+  - cbene
+
+답: dgreg
+
+
+[문제 4-2] 배치 효과: 전방과 후방 승률 차이가 가장 큰 유닛은?
+선택지:
+  - eyanoo
+  - bras
+  - dgreg
+  - aleo
+  - cbene
+
+답: eyanoo
+
+
+[문제 4-3] 진형 우세 예측
+선택지:
+  - y 방향으로 긴 진형
+  - x 방향으로 긴 진형
+
+답: x 방향으로 긴 진형
+
+
+[문제 4-4] 상성 관계 - 옳지 않은 것을 모두 고르세요 (복수 선택)
+선택지:
+  - cbene > aleo
+  - eyanoo > dgreg
+  - dgreg > aleo
+  - bras > cbene
+  - aleo > eyanoo
+  - eyanoo > bras
+  - bras > dgreg
+  - cbene > eyanoo
+  - aleo > bras
+  - dgreg > cbene
+
+답: eyanoo > dgreg, bras > cbene, eyanoo > bras, cbene > eyanoo
+
+
+[문제 4-5] 데이터 내용 확인 - 올바르지 않은 것을 모두 고르세요 (복수 선택)
+선택지:
+  - 팀의 중심이 좌표의 중심(10.5, 10.5)에 가까울수록 승률이 높다.
+  - 같은 팀 유닛 간 거리가 가까울수록 승률이 높아지는 경향을 보인다.
+  - dgreg는 전방에 위치할 때가 후방에 위치할 때보다 승률이 높다.
+  - 4대4 전투에서, aleo+bras+dgreg+eyanoo 조합의 승률은 60% 이상이다.
+  - 2대2 전투에서 aleo+dgreg 조합은 bras+eyanoo 조합에게 26전 25승을 기록했다.
+
+답:
+  - 팀의 중심이 좌표의 중심(10.5, 10.5)에 가까울수록 승률이 높다.
+  - 4대4 전투에서, aleo+bras+dgreg+eyanoo 조합의 승률은 60% 이상이다.
+
+
+[문제 4-6] 전투 결과 최종 예측 (JSON 배열 형식으로 제출)
+
+답: battle_predictions.json 파일 참조
+
+JSON 형식:
+[
+  {"battle_id": "test_001", "winner": "blue"},
+  {"battle_id": "test_002", "winner": "blue"},
+  {"battle_id": "test_003", "winner": "red"},
+  {"battle_id": "test_004", "winner": "red"},
+  {"battle_id": "test_005", "winner": "blue"},
+  ...
+  (총 500개 전투 예측)
+]
+
+예측 결과 요약:
+  - Blue 승리: 206건 (41.2%)
+  - Red 승리: 294건 (58.8%)
+
+================================================================================
