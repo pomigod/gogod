@@ -1,0 +1,94 @@
+================================================================================
+문제 4 분석 코드 - 다운로드 & 보기 원라인 명령어
+================================================================================
+
+📌 전체 코드가 하나의 파일로 정리되어 있습니다!
+   - 파일명: ALL_ANALYSIS_CODES.py
+   - 내용: 문제 4-1 ~ 4-6 전체 분석 코드 (주석 포함)
+
+================================================================================
+Windows PowerShell - 전체 코드 한번에 다운로드 & 보기
+================================================================================
+
+irm https://raw.githubusercontent.com/pomigod/gogod/claude/battle-simulation-problems-017FMJ2a6Fqxv2XDnc5DGYjn/ALL_ANALYSIS_CODES.py -OutFile ALL_ANALYSIS_CODES.py; notepad ALL_ANALYSIS_CODES.py
+
+
+================================================================================
+Windows CMD - 전체 코드 한번에 다운로드 & 보기
+================================================================================
+
+curl -L https://raw.githubusercontent.com/pomigod/gogod/claude/battle-simulation-problems-017FMJ2a6Fqxv2XDnc5DGYjn/ALL_ANALYSIS_CODES.py -o ALL_ANALYSIS_CODES.py && notepad ALL_ANALYSIS_CODES.py
+
+
+================================================================================
+개별 코드 파일 다운로드 (PowerShell)
+================================================================================
+
+# 문제 4-1 ~ 4-4: 1v1 최강자, 배치효과, 진형, 상성 분석
+irm https://raw.githubusercontent.com/pomigod/gogod/claude/battle-simulation-problems-017FMJ2a6Fqxv2XDnc5DGYjn/analyze_battles_v2.py -OutFile analyze_battles_v2.py; notepad analyze_battles_v2.py
+
+# 문제 4-5: 데이터 내용 검증
+irm https://raw.githubusercontent.com/pomigod/gogod/claude/battle-simulation-problems-017FMJ2a6Fqxv2XDnc5DGYjn/analyze_problem_4_5.py -OutFile analyze_problem_4_5.py; notepad analyze_problem_4_5.py
+
+# 문제 4-6: 승자 예측 모델
+irm https://raw.githubusercontent.com/pomigod/gogod/claude/battle-simulation-problems-017FMJ2a6Fqxv2XDnc5DGYjn/predict_battles.py -OutFile predict_battles.py; notepad predict_battles.py
+
+
+================================================================================
+개별 코드 파일 다운로드 (CMD)
+================================================================================
+
+# 문제 4-1 ~ 4-4
+curl -L https://raw.githubusercontent.com/pomigod/gogod/claude/battle-simulation-problems-017FMJ2a6Fqxv2XDnc5DGYjn/analyze_battles_v2.py -o analyze_battles_v2.py && notepad analyze_battles_v2.py
+
+# 문제 4-5
+curl -L https://raw.githubusercontent.com/pomigod/gogod/claude/battle-simulation-problems-017FMJ2a6Fqxv2XDnc5DGYjn/analyze_problem_4_5.py -o analyze_problem_4_5.py && notepad analyze_problem_4_5.py
+
+# 문제 4-6
+curl -L https://raw.githubusercontent.com/pomigod/gogod/claude/battle-simulation-problems-017FMJ2a6Fqxv2XDnc5DGYjn/predict_battles.py -o predict_battles.py && notepad predict_battles.py
+
+
+================================================================================
+모든 파일 한번에 다운로드 (PowerShell)
+================================================================================
+
+# 답안 + 모든 코드 한번에!
+irm https://raw.githubusercontent.com/pomigod/gogod/claude/battle-simulation-problems-017FMJ2a6Fqxv2XDnc5DGYjn/problem4_answers.txt -OutFile 답안.txt;
+irm https://raw.githubusercontent.com/pomigod/gogod/claude/battle-simulation-problems-017FMJ2a6Fqxv2XDnc5DGYjn/ALL_ANALYSIS_CODES.py -OutFile 전체코드.py;
+irm https://raw.githubusercontent.com/pomigod/gogod/claude/battle-simulation-problems-017FMJ2a6Fqxv2XDnc5DGYjn/battle_predictions.json -OutFile 예측결과.json;
+notepad 답안.txt
+
+
+================================================================================
+코드 구성 설명
+================================================================================
+
+ALL_ANALYSIS_CODES.py 파일에는 다음 3개 코드가 모두 포함되어 있습니다:
+
+[코드 1] 문제 4-1 ~ 4-4 분석
+  - 1v1 최강자 분석 (dgreg)
+  - 배치 효과 분석 (eyanoo)
+  - 진형 우세 분석 (x방향 진형)
+  - 상성 관계 분석
+
+[코드 2] 문제 4-5 데이터 검증
+  - 5개 statement 검증
+  - 올바르지 않은 것 2개 찾기
+
+[코드 3] 문제 4-6 승자 예측
+  - 500개 테스트 전투 예측
+  - 1v1 매치업 기반 + 유닛 파워 계산
+  - battle_predictions.json 생성
+
+================================================================================
+사용 방법
+================================================================================
+
+1. 위의 PowerShell 또는 CMD 명령어 복사
+2. 터미널 열기 (PowerShell 또는 CMD)
+3. 붙여넣기 후 Enter
+4. 자동으로 다운로드되고 메모장이 열립니다!
+
+💡 추천: ALL_ANALYSIS_CODES.py 파일 하나만 다운로드하면 모든 코드를 볼 수 있습니다!
+
+================================================================================
