@@ -11,41 +11,56 @@ def reward_function(params):
     progress = params['progress']
     steps = params['steps']
     speed = params['speed']
-    waypoints = params['waypoints']
     closest_waypoints = params['closest_waypoints']
-    heading = params['heading']
+    steering_angle = abs(params['steering_angle'])
+    distance_from_center = params['distance_from_center']
+    track_width = params['track_width']
     
-    if not all_wheels_on_track or is_crashed:
-        return 1e-4
+    closest_objects = params['closest_objects']
+    objects_location = params['objects_location']
+    objects_left_of_center = params['objects_left_of_center']
+    is_left_of_center = params['is_left_of_center']
 
-    reward = (progress / 100) ** 1.5
+    if not all_wheels_on_track: return 1e-3
+    if is_crashed: return 1e-2
+
+    # 장애물 회피 로직
+    if len(closest_objects) > 0:
+        closest_object_idx = closest_objects[0]
+        object_loc = objects_location[closest_object_idx]
+        car_loc = [params['x'], params['y']]
+        dist_to_object = math.sqrt((object_loc[0] - car_loc[0])**2 + (object_loc[1] - car_loc[1])**2)
+        
+        if dist_to_object < 1.0:
+            is_object_on_left = objects_left_of_center[closest_object_idx]
+            if is_object_on_left != is_left_of_center:
+                return 10.0
+            else:
+                return 1e-2
+
+    reward = (progress / 100) ** 2
     time_reward = (progress / steps) if steps > 0 else 0
     current_waypoint = closest_waypoints[1]
 
+    def get_in_course_reward(distance_from_center, track_width):
+        TARGET_LANE_OFFSET = 0.5
+        target_lane_center = (track_width / 2) * TARGET_LANE_OFFSET
+        distance_from_target = abs(distance_from_center - target_lane_center)
+        return (1 - (distance_from_target / (track_width / 2)))**2
+
     if current_waypoint in ZONE_1_WAYPOINTS:
-        # Zone 1: 균형
-        reward += (0.8 * speed) + time_reward
+        in_course_bonus = get_in_course_reward(distance_from_center, track_width)
+        reward += (0.8 * speed) + time_reward + (1.2 * in_course_bonus)
+    
     elif current_waypoint in ZONE_2_WAYPOINTS:
-        # Zone 2: 가속
         reward += (1.5 * (speed**3)) + (2.0 * time_reward)
+
     elif current_waypoint in ZONE_3_WAYPOINTS:
-        # Zone 3: 제어 (로그 함수 적용)
-        reward += (0.5 * np.log(speed + 1)) + (0.5 * time_reward)
+        sharp_turn_bonus = 2.0 if steering_angle > 20.0 else 0.0
+        in_course_bonus = get_in_course_reward(distance_from_center, track_width)
+        reward += sharp_turn_bonus + (1.5 * in_course_bonus) + (0.5 * time_reward)
+    
     else:
         reward += speed + time_reward
 
-    # 주행 품질 보상 (Heading Alignment)
-    next_point = waypoints[closest_waypoints[1]]
-    prev_point = waypoints[closest_waypoints[0]]
-    track_direction = math.degrees(math.atan2(next_point[1] - prev_point[1], next_point[0] - prev_point[0]))
-    direction_diff = abs(track_direction - heading)
-    if direction_diff > 180:
-        direction_diff = 360 - direction_diff
-    
-    heading_bonus = (1 - (direction_diff / 180.0))**2
-    reward *= (1 + heading_bonus)
-    
-    # 기본 속도 보너스
-    reward += (speed / 4.0)
-    
     return float(reward)
